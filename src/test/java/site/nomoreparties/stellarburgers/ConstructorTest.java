@@ -1,6 +1,5 @@
 package site.nomoreparties.stellarburgers;
 
-import com.MainPage;
 import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Description;
 import org.junit.After;
@@ -27,43 +26,43 @@ public class ConstructorTest {
 
     @Test
     @Description("Проверка что есть скролл к элементу конструктора 'Булки'. Блок 'Булки' отображается.")
-    public void scrollWithBurgerElementTest(){
+    public void scrollWithBurgerElementTest() {
 
         mainPage
                 .fillingButtonClick()
                 .bunButtonClick();
 
-        boolean blockVisible = mainPage.burgerBlock.isDisplayed();
+        boolean blockVisible = mainPage.bunsBlockVisible();
 
-        assertTrue("Block is invisible",blockVisible);
+        assertTrue("Block is invisible", blockVisible);
     }
 
     @Test
-    @Description ("Проверка что есть скролл к элементу конструктора 'Соусы'. Блок 'Соусы' отображается.")
-    public void scrollWithSauceElementTest(){
+    @Description("Проверка что есть скролл к элементу конструктора 'Соусы'. Блок 'Соусы' отображается.")
+    public void scrollWithSauceElementTest() {
 
         mainPage
                 .sauceButtonClick();
 
-        boolean blockVisible = mainPage.sauceBlock.isDisplayed();
+        boolean blockVisible = mainPage.saucesBlockVisible();
 
-        assertTrue("Block is invisible",blockVisible);
+        assertTrue("Block is invisible", blockVisible);
     }
 
     @Test
-    @Description ("Проверка что есть скролл к элементу конструктора 'Начинки'. Блок 'Начинки' отображается.")
-    public void scrollWithFillingElementTest(){
+    @Description("Проверка что есть скролл к элементу конструктора 'Начинки'. Блок 'Начинки' отображается.")
+    public void scrollWithFillingElementTest() {
 
         mainPage
                 .fillingButtonClick();
 
-        boolean blockVisible = mainPage.fillingBlock.isDisplayed();
+        boolean blockVisible = mainPage.fillingsBlockVisible();
 
-        assertTrue("Block is invisible",blockVisible);
+        assertTrue("Block is invisible", blockVisible);
     }
 
     @After
-    public void tearDown (){
+    public void tearDown() {
         webdriver().driver().close();
     }
 }

@@ -1,4 +1,4 @@
-package com.model;
+package site.nomoreparties.stellarburgers.model;
 
 public class Tokens {
     private static String accessToken;

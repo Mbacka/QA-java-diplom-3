@@ -1,8 +1,8 @@
-package com;
+package site.nomoreparties.stellarburgers;
 
-import com.model.Tokens;
-import com.model.UserRegisterResponse;
 import org.apache.commons.lang3.RandomStringUtils;
+import site.nomoreparties.stellarburgers.model.Tokens;
+import site.nomoreparties.stellarburgers.model.UserRegisterResponse;
 
 import java.util.HashMap;
 import java.util.Map;

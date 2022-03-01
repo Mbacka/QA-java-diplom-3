@@ -1,4 +1,4 @@
-package com;
+package site.nomoreparties.stellarburgers;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
@@ -15,80 +15,98 @@ public class MainPage {
 
     // Кнопка "Войти в аккаунт"
     @FindBy(how = How.XPATH, using = ".//button [text()='Войти в аккаунт']")
-    public SelenideElement loginButton;
+    private SelenideElement loginButton;
 
     // Кнопка "Личный кабинет"
-    @FindBy (how = How.XPATH, using = "//* [@href='/account']")
+    @FindBy(how = How.XPATH, using = "//* [@href='/account']")
     private SelenideElement cabinetButton;
 
     // Кнопка "Конструктор"
-    @FindBy (how = How.XPATH, using = "//*[text()='Конструктор']")
+    @FindBy(how = How.XPATH, using = "//*[text()='Конструктор']")
     private SelenideElement constructorButton;
 
     // Кнопка "Stellar burger"
-    @FindBy (how = How.XPATH, using = "//*[@class='AppHeader_header__logo__2D0X2']")
+    @FindBy(how = How.XPATH, using = "//*[@class='AppHeader_header__logo__2D0X2']")
     private SelenideElement burgerButton;
 
     // Кнопка "Булки"
-    @FindBy (how = How.XPATH, using = ".//span [@class='text text_type_main-default'][text()='Булки']")
+    @FindBy(how = How.XPATH, using = ".//span [@class='text text_type_main-default'][text()='Булки']")
     private SelenideElement bunButton;
 
     // Кнопка "Соусы"
-    @FindBy (how = How.XPATH, using = ".//span [@class='text text_type_main-default'][text()='Соусы']")
+    @FindBy(how = How.XPATH, using = ".//span [@class='text text_type_main-default'][text()='Соусы']")
     private SelenideElement sauceButton;
 
     // Кнопка "Начинки"
-    @FindBy (how = How.XPATH, using = ".//span [@class='text text_type_main-default'][text()='Начинки']")
+    @FindBy(how = How.XPATH, using = ".//span [@class='text text_type_main-default'][text()='Начинки']")
     private SelenideElement fillingButton;
 
     // Кнопка "Оформить заказ"
-    @FindBy (how = How.XPATH, using = ".//button[text()='Оформить заказ']")
+    @FindBy(how = How.XPATH, using = ".//button[text()='Оформить заказ']")
     private SelenideElement arrangeOrder;
 
     // Блок "Булки" в конструкторе
-    @FindBy (how = How.XPATH, using = ".//div/ul[1]")
-    public SelenideElement burgerBlock;
+    @FindBy(how = How.XPATH, using = ".//span[text()='Булки']")
+    private SelenideElement bunsBlock;
 
     // Блок "Соусы" в конструкторе
-    @FindBy (how = How.XPATH, using = ".//div/ul[2]")
-    public SelenideElement sauceBlock;
+    @FindBy(how = How.XPATH, using = ".//span[text()='Соусы']")
+    private SelenideElement sauceBlock;
 
     // Блок "Начинки" в конструкторе
-    @FindBy (how = How.XPATH, using = ".//div/ul[3]")
-    public SelenideElement fillingBlock;
+    @FindBy(how = How.XPATH, using = ".//span[text()='Начинки']")
+    private SelenideElement fillingBlock;
 
     // Клик по кнопке "Войти в аккаунт"
-    public UserLoginPage clickLoginButton (){
+    public UserLoginPage clickLoginButton() {
         loginButton.click();
-        return page (UserLoginPage.class);
+        return page(UserLoginPage.class);
     }
 
-    @Step ("Клик по кнопке 'Личный кабинет'")
-    public UserLoginPage clickCabinetButton(){
+    @Step("Клик по кнопке 'Личный кабинет'")
+    public UserLoginPage clickCabinetButton() {
         cabinetButton.click();
-        return page (UserLoginPage.class);
+        return page(UserLoginPage.class);
     }
 
-    @Step ("Клик на кнопку 'Бургеры'")
-    public MainPage bunButtonClick(){
+    @Step("Клик на кнопку 'Булки'")
+    public MainPage bunButtonClick() {
         bunButton.click();
         return this;
     }
 
-    @Step ("Клик на кнопку 'Соусы'")
-    public MainPage sauceButtonClick(){
+    @Step("Клик на кнопку 'Соусы'")
+    public MainPage sauceButtonClick() {
         sauceButton.click();
         return this;
     }
 
-    @Step ("Клик на кнопку 'Начинки'")
-    public MainPage fillingButtonClick(){
+    @Step("Клик на кнопку 'Начинки'")
+    public MainPage fillingButtonClick() {
         fillingButton.click();
         return this;
     }
 
+    // Отображение блока "Булки"
+    public boolean bunsBlockVisible() {
+        bunsBlock.isDisplayed();
+        return true;
+    }
+
+    // Отображение блока "Соусы"
+    public boolean saucesBlockVisible() {
+        sauceBlock.isDisplayed();
+        return true;
+    }
+
+    // Отображение блока "Начинки"
+    public boolean fillingsBlockVisible() {
+        fillingBlock.isDisplayed();
+        return true;
+    }
+
     // Отображение кнопки "Оформить заказ"
-    public boolean arrangeOrderButtonVisible (){
+    public boolean arrangeOrderButtonVisible() {
         arrangeOrder.is(Condition.visible);
         return true;
     }

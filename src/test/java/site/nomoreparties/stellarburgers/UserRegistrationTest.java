@@ -1,7 +1,5 @@
 package site.nomoreparties.stellarburgers;
 
-import com.MainPage;
-import com.RegistrationPage;
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Description;
@@ -31,15 +29,15 @@ public class UserRegistrationTest {
         Configuration.startMaximized = true;
         mainPage = open(MainPage.URL, MainPage.class);
 
-    // Для MacOS
-    //System.setProperty("webdriver.chrome.driver", "src/resources/yandexdriver");
-    // Для Windows
-    //System.setProperty("webdriver.chrome.driver", "src/resources/yandexdriver.exe");
+        // Для MacOS
+        //System.setProperty("webdriver.chrome.driver", "src/resources/yandexdriver");
+        // Для Windows
+        //System.setProperty("webdriver.chrome.driver", "src/resources/yandexdriver.exe");
     }
 
     @Test
-    @Description ("Регистрация нового пользоватля. Авторизация новым пользователем")
-    public void userRegistrationTest (){
+    @Description("Регистрация нового пользоватля. Авторизация новым пользователем")
+    public void userRegistrationTest() {
 
         mainPage
                 .clickLoginButton()
@@ -60,8 +58,8 @@ public class UserRegistrationTest {
     }
 
     @Test
-    @Description ("Попытка регистрации нового пользоватля, пароль менее 6 мисволов")
-    public void userRegistrationIncorrectPasswordTest (){
+    @Description("Попытка регистрации нового пользоватля, пароль менее 6 мисволов")
+    public void userRegistrationIncorrectPasswordTest() {
 
         String expectedErrorMessage = "Некорректный пароль";
 
@@ -75,11 +73,11 @@ public class UserRegistrationTest {
 
         String actualErrorMessage = registrationPage.getPassErrorMessageText();
 
-        assertEquals(expectedErrorMessage,actualErrorMessage);
+        assertEquals(expectedErrorMessage, actualErrorMessage);
     }
 
     @After
-    public void tearDown (){
+    public void tearDown() {
         webdriver().driver().close();
     }
 }

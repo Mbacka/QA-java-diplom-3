@@ -1,4 +1,5 @@
-package com;
+package site.nomoreparties.stellarburgers;
+
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 

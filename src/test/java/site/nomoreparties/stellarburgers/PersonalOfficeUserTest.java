@@ -1,7 +1,5 @@
 package site.nomoreparties.stellarburgers;
 
-import com.MainPage;
-import com.UserOperations;
 import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Description;
 import org.junit.After;
@@ -32,7 +30,7 @@ public class PersonalOfficeUserTest {
     }
 
     @Test
-    @Description ("Нажатие кнопки 'Личный кабинет'. Авторизированный пользователь")
+    @Description("Нажатие кнопки 'Личный кабинет'. Авторизированный пользователь")
     public void openPersonalOfficePageTest() {
 
         mainPage
@@ -47,7 +45,7 @@ public class PersonalOfficeUserTest {
     }
 
     @Test
-    @Description ("Нажатие кнопки 'Личный кабинет'. Неавторизированный пользователь")
+    @Description("Нажатие кнопки 'Личный кабинет'. Неавторизированный пользователь")
     public void openPersonalOfficePageNonAuthUserTest() {
 
         mainPage
@@ -58,7 +56,7 @@ public class PersonalOfficeUserTest {
     }
 
     @Test
-    @Description ("Нажатие кнопки 'Конструктор'. Редирект на главную")
+    @Description("Нажатие кнопки 'Конструктор'. Редирект на главную")
     public void redirectConstructorButtonWithPersonalPageTest() {
 
         mainPage
@@ -74,7 +72,7 @@ public class PersonalOfficeUserTest {
     }
 
     @Test
-    @Description ("Нажатие лого 'Stellar burger'. Редирект на главную")
+    @Description("Нажатие лого 'Stellar burger'. Редирект на главную")
     public void redirectBurgerLogoWithPersonalPageTest() {
 
         mainPage

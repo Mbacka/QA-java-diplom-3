@@ -1,11 +1,10 @@
-package com.model;
-import com.model.User;
+package site.nomoreparties.stellarburgers.model;
 
 public class UserRegisterResponse {
-      private boolean success;
-       private String accessToken;
-       private String refreshToken;
-       private User user;
+    private boolean success;
+    private String accessToken;
+    private String refreshToken;
+    private User user;
 
     public boolean isSuccess() {
         return success;

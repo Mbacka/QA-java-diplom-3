@@ -1,7 +1,6 @@
 package site.nomoreparties.stellarburgers;
 
-import com.MainPage;
-import com.UserOperations;
+
 import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Description;
 import org.junit.After;
@@ -34,7 +33,7 @@ public class UserLoginTest {
 
     @Test
     @Description("Авторизация пользователя. Кнопка 'Войти в аккаунт'")
-    public void loginUserWithLoginButtonTest(){
+    public void loginUserWithLoginButtonTest() {
 
         mainPage
                 .clickLoginButton()
@@ -50,8 +49,8 @@ public class UserLoginTest {
     }
 
     @Test
-    @Description ("Авторизация пользователя. Кнопка 'Личный кабинет'")
-    public void loginUserWithCabinetButtonTest(){
+    @Description("Авторизация пользователя. Кнопка 'Личный кабинет'")
+    public void loginUserWithCabinetButtonTest() {
 
         mainPage
                 .clickCabinetButton()
@@ -66,8 +65,8 @@ public class UserLoginTest {
     }
 
     @Test
-    @Description ("Авторизация пользователя. Кнопка 'Войти' на странице регистрации")
-    public void loginUserWithLoginButtonInRegPageTest(){
+    @Description("Авторизация пользователя. Кнопка 'Войти' на странице регистрации")
+    public void loginUserWithLoginButtonInRegPageTest() {
 
         mainPage
                 .clickLoginButton()
@@ -85,8 +84,8 @@ public class UserLoginTest {
     }
 
     @Test
-    @Description ("Авторизация пользователя. Кнопка 'Войти' страница востановления пароля")
-    public void loginUserWithResetPasswordLinkTest(){
+    @Description("Авторизация пользователя. Кнопка 'Войти' страница востановления пароля")
+    public void loginUserWithResetPasswordLinkTest() {
 
         mainPage
                 .clickLoginButton()
@@ -104,8 +103,8 @@ public class UserLoginTest {
     }
 
     @Test
-    @Description ("Выход пользователя")
-    public void logoutUserTest(){
+    @Description("Выход пользователя")
+    public void logoutUserTest() {
 
         mainPage
                 .clickLoginButton()
@@ -122,6 +121,6 @@ public class UserLoginTest {
     public void tearDown() {
         UserOperations.delete();
         webdriver().driver().close();
-   }
+    }
 }
 

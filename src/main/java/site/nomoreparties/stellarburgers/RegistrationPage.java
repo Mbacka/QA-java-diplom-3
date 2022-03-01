@@ -1,4 +1,5 @@
-package com;
+package site.nomoreparties.stellarburgers;
+
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
@@ -34,41 +35,41 @@ public class RegistrationPage {
     @FindBy(how = How.XPATH, using = ".//a[text()='Войти']")
     private SelenideElement loginLink;
 
-    @Step ("Установка значения в поле вода 'Имя'")
+    @Step("Установка значения в поле вода 'Имя'")
     public RegistrationPage setName(String name) {
         inputName.click();
         inputName.setValue(name);
         return this;
     }
 
-    @Step ("Установка значения в поле вода 'Email'")
+    @Step("Установка значения в поле вода 'Email'")
     public RegistrationPage setEmail(String email) {
         inputEmail.click();
         inputEmail.setValue(email);
         return this;
     }
 
-    @Step ("Установка значения в поле вода 'Пароль'")
+    @Step("Установка значения в поле вода 'Пароль'")
     public RegistrationPage setPassword(String password) {
         inputPassword.click();
         inputPassword.setValue(password);
         return this;
     }
 
-    @Step ("Клик на кнопку 'Регистрация'")
+    @Step("Клик на кнопку 'Регистрация'")
     public UserLoginPage regButtonClick() {
         regButton.click();
         return page(UserLoginPage.class);
     }
 
-    @Step ("Клик на кнопку 'Логин'")
+    @Step("Клик на кнопку 'Логин'")
     public UserLoginPage loginLinkClick() {
         loginLink.click();
         return page(UserLoginPage.class);
     }
 
 
-    @Step ("Сообщение об ошибке при неккоректном пароле")
+    @Step("Сообщение об ошибке при неккоректном пароле")
     public String getPassErrorMessageText() {
         passErrorMessage.shouldBe(Condition.visible);
         return passErrorMessage.getText();
